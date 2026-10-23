@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h2>Travel Bintang Abadi</h2>
+   <form>
+    Nama :
+    <input type="text" id="nama"><br><br>
+    Tujuan :
+    <select id="Tujuan" onchange="hargaTiket()">
+        <option value="Jakarta">Jakarta</option>
+        <option value="Cirebon">Cirebon</option>
+        <option value="Tasikmalaya">Tasikmalaya</option>
+    </select>
+    <br><br>
+    Jumlah TIket : 
+    <input type="number" id="member">  <br><br>
+    Harga Tiket :
+    <input type="text" id="harga" readonly> <br><br>
+    Sub Total :
+    <input type="text" id="subtotal" readonly> <br><br>
+    Diskon :
+    <input type="text" id="diskon" readonly> <br><br>
+    Total Biaya : 
+    <input type="text" id="total" readonly> <br><br>
+
+     <button type="button" onclick="hitung()">Hitung</button>
+     <button type="button" onclick="ulang()">Ulang</button>
+   </form>
+
+   <script>
+    function hargaTiket(){
+        var tujuan = document.getElementById("tujuan").value;
+        if (tujuan == "Jakarta"){
+            document.getElementById("harga").value = 100000;
+        } else if (tujuan == "Cirebon") {
+            document.getElementById("harga").value = 150000;
+        } else {
+            document.getElementById("harga").value = 200000;
+        }
+    }
+    function hitung() {
+        var harga = Number(document.getElementById("harga").value);
+        var jumlah = Number(document.getElementById("jumlah").value);
+        var member = document.getElementById("member").ariaChecked;
+        var subtotal = harga * jumlah;
+        var diskon = 0;
+        if (member == true) {
+            diskon = subtotal * 10 / 100;
+        }
+        var total = subtotal - diskon;
+
+        document.getElementById("subtotal").value = subtotal;
+        document.getElementById("diskon").value  = diskon;
+         document.getElementById("total").value  = total;
+    }
+    function ulang(){
+        document.getElementById("nama").value = "";
+        document.getElementById("tujuan").value = "Jakarta";
+        document.getElementById("jumlah").value = "";
+        document.getElementById("member").ariaChecked = false;
+        document.getElementById("subtotal").value = "";
+        document.getElementById("diskon").value = "";
+        document.getElementById("total").value = "";
+        hargaTiket();
+    }
+    hargaTiket();
+   </script>
+</body>
+</html>

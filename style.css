@@ -1,0 +1,258 @@
+
+/* PENGATURAN DASAR */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e5ded4;
+    color: #20283a;
+    line-height: 1.5;
+}
+
+header {
+    background-color: #101a3a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0 0 8px;
+}
+
+header p {
+    margin: 0;
+}
+
+/* NAVIGASI */
+nav {
+    background-color: #263d69;
+    text-align: center;
+    padding: 12px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 14px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #f0c987;
+}
+
+/* TATA LETAK UTAMA */
+main {
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.konten {
+    flex: 2;
+    min-width: 0;
+    background-color: #cbd7e8;
+    border: 1px solid #cbd7e8;
+    border-radius: 8px;
+    padding: 22px;
+}
+
+.informasi {
+    flex: 1;
+    min-width: 0;
+    background-color: #e5edf9;
+    border: 1px solid #cbd7e8;
+    border-radius: 8px;
+    padding: 18px;
+}
+
+main h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+main h3 {
+    color: #8b735b;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* KARTU PRODUK */
+.kelompok-menu {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 16px 0 28px;
+}
+
+.produk {
+    background-color: #e5edf9;
+    border: 1px solid #cbd7e8;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.produk h3 {
+    color: #20283a;
+    margin: 0 0 8px;
+    font-size: 17px;
+}
+
+.produk p {
+    margin: 6px 0;
+}
+
+.produk .harga {
+    color: #8b6543;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.produk label {
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.jumlah {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 9px;
+    border: 1px solid #b7c8df;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+/* TOMBOL */
+.tombol {
+    display: inline-block;
+    background-color: #101a3a;
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.tombol:hover {
+    background-color: #263d69;
+}
+
+/* RINGKASAN PESANAN */
+.ringkasan-pesanan {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #e5edf9;
+    border: 1px solid #cbd7e8;
+    border-radius: 8px;
+}
+
+.ringkasan-pesanan h2 {
+    margin-top: 0;
+}
+
+.ringkasan-pesanan strong {
+    color: #101a3a;
+}
+
+.aksi-pesanan {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.aksi-pesanan .tombol {
+    margin-top: 5px;
+}
+
+#pesan-sekarang {
+    background-color: #263d69;
+}
+
+#pesan-sekarang:hover {
+    background-color: #101a3a;
+}
+
+/* KONFIRMASI BERHASIL */
+.konfirmasi {
+    margin-top: 22px;
+    padding: 18px;
+    background-color: #e0f3e5;
+    border: 1px solid #91c9a0;
+    border-radius: 8px;
+    color: #205c35;
+    overflow-wrap: anywhere;
+}
+
+.konfirmasi h3 {
+    color: #205c35;
+    margin-top: 0;
+}
+
+.konfirmasi[hidden] {
+    display: none;
+}
+
+/* FOOTER */
+footer {
+    background-color: #101a3a;
+    color: white;
+    text-align: center;
+    padding: 14px;
+}
+
+footer h3 {
+    margin: 8px 0 4px;
+}
+
+footer p {
+    margin: 4px 0;
+}
+
+/* TAMPILAN HP */
+@media (max-width: 700px) {
+    main {
+        flex-direction: column;
+        margin: 16px auto;
+        padding: 0 15px;
+    }
+
+    .konten,
+    .informasi {
+        width: 100%;
+    }
+
+    .kelompok-menu {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 4px 8px;
+    }
+
+    .aksi-pesanan {
+        flex-direction: column;
+    }
+
+    .aksi-pesanan .tombol {
+        width: 100%;
+    }
+}
